@@ -17,8 +17,20 @@ namespace ProblematicProblem
             Random rng = new Random();
 
             Console.Write("Hello, welcome to the random activity generator! Would you like to generate a random activity? yes/no: ");
-            bool cont = Console.ReadLine() == "yes" ? true : false;
+            bool cont;
+            var contResponse = Console.ReadLine().ToLower();
+
+            if (contResponse == "yes" )
+            {
+                cont = true;
+            }
+            else
+            {
+                return;
+
+            }
             
+                     
             Console.Write("We are going to need your information first! What is your name? ");
             string userName = Console.ReadLine();
             Console.WriteLine();
@@ -59,19 +71,19 @@ namespace ProblematicProblem
 
                 while (cont)
                 {
-                    Console.Write("Connecting to the database");
-                    for (int i = 0; i < 10; i++)
-                    {
-                        Console.Write(". ");
-                        Thread.Sleep(500);
-                    }
-                    Console.WriteLine();
-                    Console.Write("Choosing your random activity");
-                    for (int i = 0; i < 9; i++)
-                    {
-                        Console.Write(". ");
-                        Thread.Sleep(500);
-                    }
+                Console.Write("Connecting to the database");
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.Write(". ");
+                    Thread.Sleep(500);
+                }
+                Console.WriteLine();
+                Console.Write("Choosing your random activity");
+                for (int i = 0; i < 9; i++)
+                {
+                    Console.Write(". ");
+                    Thread.Sleep(500);
+                }
                 Console.WriteLine();
                 int randomNumber = rng.Next(activities.Count);
                 string randomActivity = activities[randomNumber];
